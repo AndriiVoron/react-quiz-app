@@ -54,7 +54,7 @@ module.exports = {
         marginBottom: '20px',
       },
       '.btn': {
-        padding: '.25rem 0',
+        padding: '.25rem .25rem .25rem 0',
         borderRadius: '.25rem',
         cursor: 'pointer',
         display: 'inline-flex',
@@ -67,18 +67,12 @@ module.exports = {
           backgroundColor: '#f1f1f1',
         },
       },
-      '.btn-blue': {
-        backgroundColor: '#3490dc',
-        color: '#fff',
+      '.btn-disabled': {
+        backgroundColor: '#fff',
+        color: '#d1d1d1',
+        cursor: 'auto',
         '&:hover': {
-          backgroundColor: '#2779bd'
-        },
-      },
-      '.btn-red': {
-        backgroundColor: '#e3342f',
-        color: '#fff',
-        '&:hover': {
-          backgroundColor: '#cc1f1a'
+          backgroundColor: '#fff',
         },
       },
     })

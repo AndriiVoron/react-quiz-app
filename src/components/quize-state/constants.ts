@@ -1,83 +1,43 @@
 import { Dispatch  } from "react";
 
 export enum ACTION_TYPE {
-    SELECT_STAGE = 'SELECT_STAGE',
-    SELECT_ROW = 'SELECT_ROW',
-    SELECT_COLUMN = 'SELECT_COLUMN',
-    ADD_ROW = 'ADD_ROW',
-    ADD_COLUMN = 'ADD_COLUMN',
-    UPDATE_ACTIVECOLUMN_DATA = 'UPDATE_ACTIVECOLUMN_DATA',
+    SET_QUIZE = 'SET_QUIZE',
+    SET_ANSWER = 'SET_ANSWER',
+    STEP_BACK = 'STEP_BACK',
 }
 
 export interface QuizeStateProviderProps {
     children: React.ReactNode;
 }
 
-export interface ColumDataProps {
-    columnKey: string,
-    columnType: string,
-    columnData: string,
-    columnClassName: string,
-}
-
-export interface RowDataProps {
-    rowKey: string,
-    rowData: ColumDataProps[],
-}
-
 export interface StateProps {
-    selectedStage: string,
-    selectedRow: string,
-    selectedColumn: string,
-    activeColumnData: ColumDataProps | null,
-    pageData: RowDataProps[]
+    currentStep: number,
+    totalSteps: number,
+    questions: ObjectWithAnyAtributes[],
+    userAnswers: ObjectWithAnyAtributes[],
 }
 
-interface ObjectWithStringAtributes {
-    [key: string]: string;
+interface ObjectWithAnyAtributes {
+    [key: string]: any;
 }
-export interface SetColumnPaylodProps {
-    selectedColumn?: string, 
-    selectedRow?: string, 
-    activeColumnData: ColumDataProps,
+export interface PaylodProps {
+    currentPage?: number, 
+    totalPages?: number, 
+    activeColumnData: ObjectWithAnyAtributes,
 }
 export interface ActionProps {
     type: ACTION_TYPE,
-    payload?: ObjectWithStringAtributes | SetColumnPaylodProps ;
+    payload?: ObjectWithAnyAtributes | PaylodProps ;
 }
 
-export interface PageContextIntreface {
+export interface QuizeContextIntreface {
     state: StateProps,
     dispatch: Dispatch<ActionProps>,
 }
 
-export interface SetNewDataProps {
-    fn: (pageData: RowDataProps[], selectedRow: string, selectedColumn: string, newItem: ColumDataProps ) => RowDataProps[]
-}
-
 export const initialState = {
-    selectedStage: 'page',
-    selectedRow: '',
-    selectedColumn: '',
-    activeColumnData: null,
-    pageData: [
-        {
-            rowKey: 'tytleRow',
-            rowData: [
-                {
-                    columnKey: 'tytleRow-tytleColumn',
-                    columnType: 'text',
-                    columnData: '# Untitled',
-                    columnClassName: 'text-align-center',
-                }
-            ]
-        }
-    ]
-}
-
-export const initialColumn = {
-    columnKey: '',
-    columnType: 'text',
-    columnData: '',
-    columnClassName: 'text-align-left',
+    currentStep: 1,
+    totalSteps: 10,
+    questions: [],
+    userAnswers: [],
 }

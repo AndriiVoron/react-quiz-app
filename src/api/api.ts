@@ -19,17 +19,26 @@ export const questions = [
   {
     id: 3,
     question: 'Do you have any known allergies?',
-    type: 'custom-input'
+    type: 'custom-input',
+    additionalOptions: {
+      hideNextButton: true
+    },
   },
   {
     id: 4,
     question: 'Do you have chronic diseases?',
-    type: 'custom-input'
+    type: 'custom-input',
+    additionalOptions: {
+      hideNextButton: true
+    },
   },
   {
     id: 5,
     question: 'Do you have any disabilities?',
     type: 'radio-group',
+    additionalOptions: {
+      hideNextButton: true
+    },
     answerOptions: [
       {
         value: 'Yes, I have',
@@ -48,12 +57,18 @@ export const questions = [
   {
     id: 6,
     question: 'How many steps do you take per day?',
-    type: 'custom-input'
+    type: 'custom-input',
+    additionalOptions: {
+      hideNextButton: true
+    },
   },
   {
     id: 7,
     question: 'Do you have any known allergies?',
     type: 'radio-group',
+    additionalOptions: {
+      hideNextButton: true
+    },
     answerOptions: [
       {
         value: 'Yes',
@@ -73,6 +88,9 @@ export const questions = [
     id: 8,
     question: 'You control your weight?',
     type: 'radio-group',
+    additionalOptions: {
+      hideNextButton: true
+    },
     answerOptions: [
       {
         value: 'Yes',
@@ -88,6 +106,9 @@ export const questions = [
     id: 9,
     question: 'What bad habits do you have?',
     type: 'checkbox-group',
+    additionalOptions: {
+      hideNextButton: true
+    },
     answerOptions: [
       {
         value: 'I smoke',
@@ -108,6 +129,9 @@ export const questions = [
     question: 'Waht is you <b>primary reason</b> for wanting to make a change?',
     description: '(We can help with all of these. For now, pick the moust important for you.)',
     type: 'radio-group',
+    additionalOptions: {
+      hideNextButton: true
+    },
     answerOptions: [
       {
         value: 'I whant to live longer',
