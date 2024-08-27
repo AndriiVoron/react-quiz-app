@@ -1,12 +1,10 @@
-import React from 'react';
-import QuizePage from '../quize-page/quize-page';
+import { QuizePage } from "../quize-page";
 
-function ContentPage() {
+export function ContentPage() {
   return (
-    <div className="App">
+    <div className="content-conteiner items-start justify-center w-762 max-w-762 h-screen">
       <QuizePage />
     </div>
   );
 }
 
-export default ContentPage;

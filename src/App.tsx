@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentPage from './components/content-page/content-page';
 import './App.css';
+import { ContentPage } from './components/content-page';
 
 function App() {
   return (

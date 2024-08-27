@@ -1,9 +1,10 @@
 import React from 'react';
+import { QuizeHead } from './components/quize-head';
 
-function QuizePage() {
+export function QuizePage() {
   return (
-    <div>
-     Header
+    <div className='card-component w-600 h-400'>
+     <QuizeHead />
      <hr />
      Progres Bar
      <hr />
@@ -11,5 +12,3 @@ function QuizePage() {
     </div>
   );
 }
-
-export default QuizePage;

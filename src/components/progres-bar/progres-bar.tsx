@@ -1,11 +1,9 @@
 import React from 'react';
 
-function ProgresBar() {
+export function ProgresBar() {
   return (
     <div className="App">
       
     </div>
   );
 }
-
-export default ProgresBar;
